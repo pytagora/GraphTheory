@@ -1,0 +1,41 @@
+# 
+# code 2
+# graph theory
+# Valentino Skobljanec
+#
+
+cover:=function(A, K)
+local i,j, t, g, G;
+G:=SymmetricGroup(0);
+# empty graph
+t:=NullGraph(G, Length(A));
+# graph generated with matrix A
+g:=Graph(G, [1..Length(A)], OnPoints, function(x,y) return A[x][y]=1; end);
+# loop over every vertex of potential cover
+for i in K do
+    # loop over every neighbour of that vertex
+    for j in g.adjacencies[i] do
+        # adding edges
+	AddEdgeOrbit(t,[i,j]);
+	AddEdgeOrbit(t,[j,i]);
+    od;
+od;
+# does our potential cover really covers the full graph
+return t.adjacencies = g.adjacencies;
+end;
+
+euler:=function(A)
+local i, t, G;
+G:=SymmetricGroup(0);
+t:=Graph(G, [1..Length(A)], OnPoints, function(x,y) return A[x][y]=1; end);
+# loop over every vertex in the graph
+for i in [1..Length(A)] do
+    # if there is a vertex that has an odd degree
+    if Length(t.adjacencies[i]) mod 2 <> 0 then
+        # graph doesn't have that property 
+        return false;
+    fi; 
+od;
+# if every vertex has even degree than our graph has Euler's closed path
+return true;
+end;
