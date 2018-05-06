@@ -1,0 +1,22 @@
+# 
+# Code 1
+# graph theory
+# Valentino Skobljanec
+#
+
+G:=SymmetricGroup(0);
+t:=Graph(G, [1..Length(A)], OnPoints, function(x,y) return A[x][y]=1; end);
+g:=Graph(G, [1..Length(A)], OnPoints, function(x,y) return A[x][y]=1; end);
+
+solver:=function(A)
+local i,j;
+for i in [1..t.order-1] do
+
+    for j in [i+1..t.order] do
+        if Intersection(t.adjacencies[i],t.adjacencies[j]) <> [] then
+            AddEdgeOrbit(g, [i,j]);
+            AddEdgeOrbit(g, [j,i]);
+        fi;
+    od;
+od;
+end;
