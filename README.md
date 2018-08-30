@@ -1,5 +1,7 @@
 # Graph theory 
 
+[![GitHub license](https://img.shields.io/github/license/pytagora/GraphTheory.svg)](https://github.com/pytagora/GraphTheory/blob/master/LICENSE.md)
+
 ## Content
 This repository is covering some of the topics in the field of graph theory. Main core of the repository is discrete mathematics such as applying different types of algorithms on graphs.
 Code solutions are programmed in GAP and MAGMA. These are mathematical programs used by experts in discrete mathematics. Package GAP is preffered for group theory problems while package MAGMA shows its high quality and performance in the field of graph theory. Both of the packages can be used for problems in the field of design theory. 
@@ -23,3 +25,8 @@ For more information about MAGMA package you can check one of the following link
 - official [documentation](http://magma.maths.usyd.edu.au/magma/documentation/).
 - [download](http://magma.maths.usyd.edu.au/magma/download/all/) instructions.
 - online MAGMA [calculator](http://magma.maths.usyd.edu.au/calc/).
+
+## License
+Repository *GraphTheory* is licensed under the [MIT](https://github.com/pytagora/GraphTheory/blob/master/LICENSE.md) license.
+<br /> <br /> <br />
+Copyright &copy; 2016 Valentino Skobljanec
